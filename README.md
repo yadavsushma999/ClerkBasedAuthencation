@@ -47,12 +47,9 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/sign-up
 DATABASE_URL=your-database-url
 
 ---
-
+```
+```prisma
 ## 📁 Prisma Setup Commands
-
-Create a `.env.local` file in the root of your project and add:
-
-```env
 # Generate Prisma Client
 npx prisma generate
 
