@@ -30,16 +30,30 @@ A full-featured authentication system using **Clerk** (email/password + OTP), **
 ---
 
 ## 📁 Environment Variables:
+# Clerk Keys
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-publishable-key
 CLERK_SECRET_KEY=your-secret-key
-NEXT_PUBLIC_CLERK_SIGN_IN_URL = /auth/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL = /auth/sign-up
-DATABASE_URL=your-db-url
+
+# Clerk Routing
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/auth/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/sign-up
+
+# Database (PostgreSQL / MySQL / SQLite, etc.)
+DATABASE_URL=your-database-url
+
 
 ##Prisma Command
+# Generate Prisma Client
 npx prisma generate
+
+# Run migrations and initialize your database
 npx prisma migrate dev --name init
+
+# Push schema changes to the database without creating a migration
 npx prisma db push
+
+# Open the Prisma Studio GUI to browse your database
 npx prisma studio
+
 
 
