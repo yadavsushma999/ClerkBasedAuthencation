@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🔐 Clerk + Password Auth + Prisma – Next.js App
 
-First, run the development server:
+A full-featured authentication system using **Clerk** (email/password + OTP), **Next.js (App Router)**, **TypeScript**, and **Prisma ORM** to manage custom user data in your own database.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔐 **Email + Password Authentication** (via Clerk)
+- 📱 **OTP Login** via Email/SMS (optional with Clerk)
+- 💾 **Prisma ORM** with synced `User` table
+- ⚙️ Built on **Next.js App Router**
+- 🧱 Fully typed with **TypeScript**
+- 🔄 Auto-sync Clerk users into your DB
+- ✅ Clerk middleware for protecting routes
+- 📦 Clean folder structure, scalable setup
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+- [Next.js 14+](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Clerk](https://clerk.dev/)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL / MySQL / SQLite] (Your choice)
+- [Tailwind CSS](https://tailwindcss.com/) *(Optional)*
+- [Sonner](https://sonner.emilkowal.dev/) *(for toast notifications)*
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Environment Variables:
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-publishable-key
+CLERK_SECRET_KEY=your-secret-key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL = /auth/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL = /auth/sign-up
+DATABASE_URL=your-db-url
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##Prisma Command
+npx prisma generate
+npx prisma migrate dev --name init
+npx prisma db push
+npx prisma studio
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
