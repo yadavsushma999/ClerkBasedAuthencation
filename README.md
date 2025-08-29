@@ -46,3 +46,22 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/auth/sign-up
 # Database
 DATABASE_URL=your-database-url
 
+---
+
+## 📁 Prisma Setup Commands
+
+Create a `.env.local` file in the root of your project and add:
+
+```env
+# Generate Prisma Client
+npx prisma generate
+
+# Run initial migration
+npx prisma migrate dev --name init
+
+# Push schema to the database (without migration)
+npx prisma db push
+
+# Open Prisma Studio (GUI for your DB)
+npx prisma studio
+
